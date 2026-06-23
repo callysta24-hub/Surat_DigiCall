@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Gift ⋆˚꩜｡</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <audio id="bgMusic" src="music.mp3" loop></audio>
+
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+
+    <div class="star s1">✦</div>
+    <div class="star s2">✦</div>
+    <div class="star s3">✦</div>
+    <div class="star s4">✦</div>
+
+    <div class="scene active" id="sceneIntro">
+        <div class="container" id="page1">
+            <div class="logo">✦</div>
+            <h1>A Little Gift</h1>
+            <p>
+                Made just for someone special.<br>
+                Some memories are too precious to stay only inside our hearts.
+            </p> 
+            <div class="search-box">
+                <input id="nameInput" type="text" placeholder="Enter your name..." autocomplete="off">
+                <button onclick="startJourney()">Buka →</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene hidden red-screen" id="sceneEnvelope">
+        <div class="music-control" onclick="toggleMusic()">🎵 <span id="musicStatus">ON</span></div>
+
+        <div class="envelope-wrapper">
+            <div class="envelope" id="mainEnvelope" onclick="openEnvelope()">
+                <div class="flap"></div>
+                <div class="pocket"></div>
+                <div class="letter-inside">
+                    <span style="font-size: 30px;">💌</span>
+                </div>
+            </div>
+            <p class="envelope-hint">Klik amplopnya untuk membuka...</p>
+        </div>
+    </div>
+
+    <div class="scene hidden" id="sceneContent">
+        <div class="content-star cs1">✦</div>
+        <div class="content-star cs2">✦</div>
+        <div class="content-star cs3">✦</div>
+        <div class="content-star cs4">✦</div>
+
+        <div class="content-container">
+            <div class="main-layout">
+                <div class="text-side">
+                    <div class="logo-small">⋆˚꩜｡</div>
+                    <h2 id="greetingTitle">Hai, Name!</h2>
+                    <p id="suratTeks" class="script-font"></p>
+
+                    <div class="candle-section" id="candleSection">
+                        <hr class="divider">
+                        <p class="candle-instruction">Klik lilinnya biar mati</p>
+                        <div class="candle" id="digitalCandle" onclick="blowCandle()">
+                            <div class="flame" id="flame"></div>
+                            <div class="wick"></div>
+                            <div class="wax"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-side">
+                    <div class="polaroid">
+                        <img id="friendPhoto" src="" alt="Memory">
+                        <div class="caption" id="photoCaption">Us ✨</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
